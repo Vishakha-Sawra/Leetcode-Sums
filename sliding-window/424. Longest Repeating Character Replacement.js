@@ -1,6 +1,8 @@
 // 424. Longest Repeating Character Replacement
+// Input: s = "AABABBA", k = 1
+// Output: 4
 
-var characterReplacement = function(s, k) {
+var characterReplacement = function (s, k) {
     let max = 0;
     let left = 0;
     let right = 0;
