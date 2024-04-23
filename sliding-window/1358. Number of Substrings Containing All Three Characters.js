@@ -1,9 +1,9 @@
 //  1358. Number of Substrings Containing All Three Characters
 // s = "abcabc"
 
-var numberOfSubstrings = function(s) {
+var numberOfSubstrings = function (s) {
     let res = 0;
-    let count = {a: 0, b: 0, c: 0};
+    let count = { a: 0, b: 0, c: 0 };
     let left = 0;
     for (let right = 0; right < s.length; right++) {
         count[s[right]]++;
@@ -11,7 +11,7 @@ var numberOfSubstrings = function(s) {
             count[s[left]]--;
             left++;
         }
-        res += left;
+        res += left; // res = res + left
     }
     return res;
 };
