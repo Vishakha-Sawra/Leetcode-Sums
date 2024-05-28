@@ -20,7 +20,7 @@ var totalFruit = function (tree) {
 };
 
 // tree = [3, 3, 3, 1, 2, 1, 1, 2, 3, 3, 4];
-
+// output = 5; cause u take fruits => [1,2,1,1,,2]
 var totalFruit = function (tree) {
     let l = 0, r = 0, maxLen = 0, map = new Map();
     while (r < tree.length) {
