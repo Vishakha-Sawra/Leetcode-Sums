@@ -29,24 +29,18 @@ var mergeTwoLists = function (l1, l2) {
 
 // Space complexity : O(1) since it's a constant space solution.
 
-var mergeTwoLists = function (l1, l2) {
-    let dummy = new ListNode(-1);
-    let head = dummy;
+// Recursion solution
 
-    while (l1 !== null && l2 !== null) {
-        if (l1.val < l2.val) {
-            dummy.next = l1;
-            l1 = l1.next;
-        } else {
-            dummy.next = l2;
-            l2 = l2.next;
-        }
-        dummy = dummy.next;
-    }
-    if (l1 !== null) {
-        dummy.next = l1;
+var mergeTwoLists = function (l1, l2) {
+    if (l1 === null) return l2;
+    if (l2 === null) return l1;
+
+    if (l1.val < l2.val) {
+        l1.next = mergeTwoLists(l1.next, l2);
+        return l1;
     } else {
-        dummy.next = l2;
+        l2.next = mergeTwoLists(l1, l2.next);
+        return l2;
     }
-    return head.next;
 }
+

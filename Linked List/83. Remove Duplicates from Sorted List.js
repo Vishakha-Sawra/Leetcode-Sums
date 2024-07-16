@@ -1,6 +1,6 @@
 // Remove Duplicates from Sorted List
 
-var deleteDuplicates = function(head) {
+var deleteDuplicates = function (head) {
     let current = head;
     while (current !== null && current.next !== null) {
         if (current.val === current.next.val) {
@@ -12,3 +12,5 @@ var deleteDuplicates = function(head) {
     return head;
 };
 
+// Time complexity: O(n)
+// Space complexity: O(1)
