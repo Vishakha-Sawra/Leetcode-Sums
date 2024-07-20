@@ -1,14 +1,15 @@
 // 206. Reverse Linked List
 
-// Recursion
-
 var reverseList = function (head) {
-    if (!head || !head.next) return head;
-    let p = reverseList(head.next);
-    head.next.next = head;
-    head.next = null;
-    return p;
-};
+  let prev = null;
+  let curr = head;
+  let next = null;
 
-// Time complexity: O(n)
-// Space complexity: O(n)
+  while (curr !== null) {
+    next = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = next;
+  }
+  return prev;
+};
