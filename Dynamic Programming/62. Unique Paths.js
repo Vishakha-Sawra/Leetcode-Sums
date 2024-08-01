@@ -1,12 +1,12 @@
 // Unique Paths
 
 var uniquePaths = function (m, n) {
-    let dp = new Array(m).fill(0).map(() => new Array(n).fill(0)); // create a 2d array with m rows and n columns and fill it with 0 
+    let dp = new Array(m).fill(0).map(() => new Array(n).fill(0)); 
     for (let i = 0; i < m; i++) {
-        dp[i][0] = 1; // fill the first column with 1 - but we already have 0 there isnt it? => yes, but we are filling the first column with 1 because we can only move down or right, so there is only 1 way to reach the first column from the top row 
+        dp[i][0] = 1; 
     }
     for (let j = 0; j < n; j++) {
-        dp[0][j] = 1; // fill the first row with 1 - but we already have 0 there isnt it? => yes, but we are filling the first row with 1 because we can only move down or right, so there is only 1 way to reach the first row from the leftmost column
+        dp[0][j] = 1; 
     }
     for (let i = 1; i < m; i++) {
         for (let j = 1; j < n; j++) {
