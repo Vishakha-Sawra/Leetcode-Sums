@@ -1,5 +1,24 @@
 // 1004. Max Consecutive Ones III
 
+// 1. Brute force
+// Generate all possible substrings and count the number of zeros in each substring. If the number of zeros is less than or equal to k, update the max length. Return the max length. 
+
+var longestOnes = function (nums, k) {
+    let max = 0;
+    for (let i = 0; i < nums.length; i++) {
+        let zeros = 0;
+        for (let j = i; j < nums.length; j++) {
+            if (nums[j] === 0) {
+                zeros++;
+            }
+            if (zeros <= k) {
+                max = Math.max(max, j - i + 1);
+            }
+        }
+    }
+    return max;
+}
+
 var longestOnes = function (nums, k) {
     let l = 0;
     let r = 0;

@@ -8,7 +8,7 @@ var removeDuplicates = function (nums) {
             nums[i] = nums[j];
         }
     }
-    return i + 1;
+    return i + 1; // return the length of the new array after removing duplicates 
 };
 
 // 27. Remove Element

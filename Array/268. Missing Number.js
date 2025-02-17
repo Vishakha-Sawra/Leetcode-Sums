@@ -2,7 +2,7 @@
 
 var missingNumber = function (nums) {
     let n = nums.length;
-    let sum = n * (n + 1) / 2;
+    let sum = n * (n + 1) / 2; // why n * (n + 1) / 2? because the sum of 1 to n is n * (n + 1) / 2 . why not 0 to n? because the array starts from 0 to n - 1 so the sum of 0 to n - 1 is n * (n - 1) / 2
     for (let num of nums) {
         sum -= num;
     }

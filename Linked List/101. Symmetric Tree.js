@@ -19,10 +19,10 @@ function isMirror(t1, t2) {
 
 var isSymmetric = function (root) {
     let stack = [];
-    stack.push(root);
-    stack.push(root);
+    stack.push(root); // [1]
+    stack.push(root); // [1, 1]
     while (stack.length > 0) {
-        let t1 = stack.pop();
+        let t1 = stack.pop(); // remove the last element from the stack
         let t2 = stack.pop();
         if (t1 === null && t2 === null) continue;
         if (t1 === null || t2 === null) return false;

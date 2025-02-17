@@ -11,7 +11,7 @@ var levelOrder = function(root) {
         let len = queue.length;
         let temp = [];
         for (let i = 0; i < len; i++) {
-            let node = queue.shift(); 
+            let node = queue.shift(); // remove the first element from the queue
             temp.push(node.val);
             if (node.left) queue.push(node.left);
             if (node.right) queue.push(node.right);

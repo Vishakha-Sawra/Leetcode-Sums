@@ -20,6 +20,10 @@ function majorityElement(nums) {
 
     return el;
 }
+
+// time complexity: O(n)
+// space complexity: O(1)
+
 // this you will use if you are not sure that the majority element exists in the array or not
 function majorityElement(nums) {
     let n = nums.length;
@@ -49,3 +53,25 @@ function majorityElement(nums) {
     }
     return -1;
 }
+
+
+// 2. Using Hash Map
+
+var majorityElement = function(nums) {
+    let map = {};
+    for(let i = 0; i < nums.length; i++) {
+        if(map[nums[i]]) {
+            map[nums[i]]++;
+        } else {
+            map[nums[i]] = 1;
+        }
+    }
+    for(let key in map) {
+        if(map[key] > nums.length / 2) {
+            return Number(key);
+        }
+    }
+}
+
+// time complexity: O(n)
+// space complexity: O(n)
