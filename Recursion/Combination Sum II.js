@@ -20,3 +20,6 @@ function combinationSum(candidates, target) {
     findCombinations(0, candidates, target, ans, []);
     return ans;
 }
+
+// Time Complexity: O(2^N)
+// Space Complexity: O(N)
