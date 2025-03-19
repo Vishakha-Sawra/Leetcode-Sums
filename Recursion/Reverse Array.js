@@ -25,3 +25,21 @@ console.log(res);
 
 // Time Complexity: O(n)
 // Space Complexity: O(n)
+
+// 2. Recursion using single var. 
+
+function swapSinglePointer(arr, i) {
+    let n = arr.length;
+    if (i >= Math.floor(n / 2)) return; // Base case: Stop at the middle
+
+    // Swap elements
+    [arr[i], arr[n - i - 1]] = [arr[n - i - 1], arr[i]];
+
+    // Recursive call moving towards the middle
+    swapSinglePointer(arr, i + 1);
+}
+
+// Example usage
+let arr2 = [1, 2, 3, 4, 5];
+swapSinglePointer(arr2, 0);
+console.log(arr2); // Output: [5, 4, 3, 2, 1]
